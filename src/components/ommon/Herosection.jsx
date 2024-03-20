@@ -26,16 +26,16 @@ const HeroSection = () => {
               <img className="object-cover object-center rounded" alt="hero" src="https://stat4.bollywoodhungama.in/wp-content/uploads/2016/03/50386826.jpg" />
             </div>
             <div>
-              <img className="object-cover object-center rounded" alt="hero" src="https://wp-socialnation-assets.s3.ap-south-1.amazonaws.com/wp-content/uploads/2023/05/31155832/YJHD.png" />
+              <img className="object-cover object-center rounded" alt="hero" src="https://www.patronproduction.com/wp-content/uploads/2019/10/Feature-copy.jpg" />
             </div>
             <div>
-              <img className="object-cover object-center rounded" alt="hero" src="https://images.hindustantimes.com/img/2022/02/02/1600x900/Gangubai_1643785236716_1643785261330.jpeg" />
+              <img className="object-cover object-center rounded" alt="hero" src="https://feeds.abplive.com/onecms/images/uploaded-images/2021/09/30/4a087af49f05c792c6e690cb1534cb84_original.jpg?impolicy=abp_cdn&imwidth=720" />
             </div>
             <div>
               <img className="object-cover object-center rounded" alt="hero" src="https://i0.wp.com/varunshrivastava.in/wp-content/uploads/2016/05/3-idiots-music-album-cover.jpg?fit=956%2C714&ssl=1" />
             </div>
             <div>
-              <img className="object-cover object-center rounded" alt="hero" src="https://static.zoomnews.com/thumb/msid-100078439,width-1280,height-720,resizemode-75/100078439.jpg" />
+              <img className="object-cover object-center rounded" alt="hero" src="https://stat5.bollywoodhungama.in/wp-content/uploads/2016/03/60874102.jpg" />
             </div>
           </Slider>
         </div>
