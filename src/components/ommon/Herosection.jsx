@@ -1,10 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
 import TypingEffect from 'react-typing-effect'; // Import the package
-
+import { Link } from "react-router-dom";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 
 const HeroSection = () => {
   const settings = {
@@ -18,7 +17,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="hero-section">
+    <section className="hero-section" style={{ backgroundImage: `url(https://www.desktopbackground.org/download/o/2014/08/27/815642_dark-blue-wallpapers_1920x1080_h.jpg)` }}>
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
           <Slider {...settings}>
@@ -40,7 +39,9 @@ const HeroSection = () => {
           </Slider>
         </div>
         <div className="flex flex-col md:flex-grow md:pl-24 md:items-start md:text-left items-center text-center">
-          <h1 className="title-font font-bold text-5xl mb-4 text-gray-900">Movie-Searcher</h1>
+          <h1 className="title-font font-bold text-5xl mb-4 text-gray-900"> 
+            <span style={{ color: "white" }}>Movie-Searcher</span>
+          </h1>
           <h2 className="title-font font-semibold text-4xl mb-8 text-blue-800">
             <TypingEffect text="Searching made easy"
               speed={100}
@@ -50,7 +51,7 @@ const HeroSection = () => {
               cursorRenderer={cursor => <h1>{cursor}</h1>}
               displayTextRenderer={(text, i) => {
                 return (
-                  <h2>
+                  <h2 style={{ color: "#00C0CF" }}>
                     {text.split('').map((char, i) => {
                       return (
                         <span key={i}>{char}</span>
@@ -61,9 +62,11 @@ const HeroSection = () => {
               }}
             />
           </h2>
-          <p className="mb-12 leading-relaxed text-lg">Your go-to place to search movies, anytime anywhere!</p>
+          <p className="mb-12 leading-relaxed text-lg" style={{ color: "white" }}>Your go-to place to search movies, anytime anywhere!</p>
           <div className="flex justify-center mt-8">
-            <button className="inline-flex text-white bg-blue-800 border-0 py-3 px-10 focus:outline-none hover:bg-blue-900 rounded-full text-lg animate-bounce">Search here</button>
+            <Link to="/"> {/* Use Link component to navigate to homepage */}
+              <button className="inline-flex text-white bg-blue-800 border-0 py-3 px-10 focus:outline-none hover:bg-blue-900 rounded-full text-lg animate-bounce">Search here</button>
+            </Link>
           </div>
         </div>
       </div>

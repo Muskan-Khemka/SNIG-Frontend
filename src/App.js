@@ -1,25 +1,34 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Updated imports
 import './index.css';
-
-import HeroSection from './components/ommon/Herosection';
-import ProfileEdit from './components/ommon/Profileedit'; // Import the ProfileEdit component
-
+import HomePage from './pages/home/index';
+import ProfileEdit from './components/ommon/Profileedit'; // Corrected import path
+import Header from './components/ommon/header';
+import Footer from './components/ommon/footer';
+import Moviepage from './pages/MoviesPage/Moviepage';
+import Pricing from "./pages/pricing";
+import Moviesgrid from "./pages/MoviesGrid/Moviesgrid";
+import Playbackvedio from "./pages/playbackvedio/Playbackvedio";
 
 function App() {
   return (
-    <div className="relative width-full">
-      <div className="mx-auto overflow-hidden">
-       
-        <HeroSection />
+    <Router>
+      <div className="relative width-full">
+        <Header />
+        <div className="mx-auto overflow-hidden">
+          <Routes> {/* Use <Routes> instead of <Switch> */}
+            <Route exact path="/" element={<HomePage />} /> {/* Use 'element' prop instead of 'component' */}
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/moviesgrid" element={<Moviesgrid />} />
+            <Route path="/moviepage" element={<Moviepage />} />
+            <Route path="/profile" element={<ProfileEdit />} />
+            <Route path="/playback" element={<Playbackvedio />} />
+            {/* Add more routes here */}
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <div>
-  <React.StrictMode>
-    <ProfileEdit />
-  </React.StrictMode>
-
-</div>
-    </div>
+    </Router>
   );
 }
 

@@ -1,1 +1,33 @@
-
+@keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes gradientChange {
+    
+0% {
+      color: #6ae1ff; /* Blue color */
+    }
+    50% {
+      color: rgb(255, 255, 255);}
+      100%{
+        color: rgb(126, 231, 255);
+      }
+      
+    }
+  
+  
+  .zoom-effect {
+    animation: zoomInOut 5s infinite alternate;
+  }
+  
+  .gradient-effect {
+    animation: gradientChange 5s infinite alternate;
+  }
