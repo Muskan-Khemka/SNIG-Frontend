@@ -4,6 +4,7 @@ import './Playbackvedio.css'
 
 const Playbackvedio = () => {
     return (
+        <section style={{background: "#00172D"}}>
         <div className="container">
             <div className="video-description">
                 <div className="video">
@@ -21,7 +22,7 @@ const Playbackvedio = () => {
                     <div className="text-container">
                         <h2 className='movie-name'>Description</h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem, exercitationem quam inventore iusto iure deserunt, asperiores nostrum expedita delectus quo soluta repellendus! Harum laboriosam aliquam laudantium libero, fugit dolorem. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem, exercitationem quam inventore iusto iure deserunt, asperiores nostrum expedita delectus quo soluta repellendus! Harum laboriosam aliquam laudantium libero, fugit dolorem. Lorem ipsum dolor sit amet. Lorem
                         </p>
                     </div>
                     <div className="button-container">
@@ -29,27 +30,59 @@ const Playbackvedio = () => {
                     </div>
                 </div>
             </div>
-            <section id="community-section">
-                <h2 className='comments'>Comments</h2>
-                <div className="feedback-items">
-                    <div className="feedback-item">
-                        <p>
-                            <strong>@Rajputanacommunity993:</strong> Keep it up, this is a great video!
-                        </p>
-                    </div>
-                    <div className="feedback-item">
-                        <p>
-                            <strong>@timoanjala435:</strong> This is a nice tutorial, thank you!
-                        </p>
-                    </div>
-                    <div className="feedback-item">
-                        <p>
-                            <strong>@lkhjgfd678:</strong> thank you very much
-                        </p>
+            <div className='vid-descrip'>
+                <h4>4 Comments</h4>
+                <div className='comment'>
+                    <img src='https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=' alt=''/>
+                    <div>
+                        <h3>Jack Nicholson <span>1 day ago</span></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, maxime.</p>
+                        <div className="comment-action">
+                            <img src='https://cdn1.vectorstock.com/i/1000x1000/13/80/like-icon-vector-21641380.jpg' alt=''/>
+                            <span>10</span>
+                            <img src='https://cdn3.vectorstock.com/i/1000x1000/14/02/dislike-icon-vector-21641402.jpg' alt=''/>
+                        </div>
                     </div>
                 </div>
-            </section>
+                <div className='comment'>
+                    <img src='https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=' alt=''/>
+                    <div>
+                        <h3>Jack Nicholson <span>1 day ago</span></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, maxime.</p>
+                        <div className="comment-action">
+                            <img src='https://cdn1.vectorstock.com/i/1000x1000/13/80/like-icon-vector-21641380.jpg' alt=''/>
+                            <span>10</span>
+                            <img src='https://cdn3.vectorstock.com/i/1000x1000/14/02/dislike-icon-vector-21641402.jpg' alt=''/>
+                        </div>
+                    </div>
+                </div>
+                <div className='comment'>
+                    <img src='https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=' alt=''/>
+                    <div>
+                        <h3>Jack Nicholson <span>1 day ago</span></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, maxime.</p>
+                        <div className="comment-action">
+                            <img src='https://cdn1.vectorstock.com/i/1000x1000/13/80/like-icon-vector-21641380.jpg' alt=''/>
+                            <span>10</span>
+                            <img src='https://cdn3.vectorstock.com/i/1000x1000/14/02/dislike-icon-vector-21641402.jpg' alt=''/>
+                        </div>
+                    </div>
+                </div>
+                <div className='comment'>
+                    <img src='https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=' alt=''/>
+                    <div>
+                        <h3>Jack Nicholson <span>1 day ago</span></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, maxime.</p>
+                        <div className="comment-action">
+                            <img src='https://cdn1.vectorstock.com/i/1000x1000/13/80/like-icon-vector-21641380.jpg' alt=''/>
+                            <span>10</span>
+                            <img src='https://cdn3.vectorstock.com/i/1000x1000/14/02/dislike-icon-vector-21641402.jpg' alt=''/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        </section>
     );
 };
 
