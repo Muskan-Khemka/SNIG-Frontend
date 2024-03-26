@@ -22,7 +22,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #3bb19b;
+	background-color: #0B0D29;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
@@ -52,8 +52,9 @@
 }
 
 .form_container h1 {
-	font-size: 40px;
+	font-size: 30px;
 	margin-top: 0;
+	color: #0B0D29;
 }
 
 .input {
@@ -89,10 +90,11 @@
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
+	color: #0B0D29;
 }
 
 .green_btn {
-	background-color: #3bb19b;
+	background-color: #0B0D29;
 	color: white;
 	margin: 10px;
 }

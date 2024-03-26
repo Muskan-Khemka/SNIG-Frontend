@@ -4,7 +4,7 @@ import './Playbackvedio.css'
 
 const Playbackvedio = () => {
     return (
-        <section style={{background: "#00172D"}}>
+        <section style={{background: "#0B0D29"}}>
         <div className="container">
             <div className="video-description">
                 <div className="video">
