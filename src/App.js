@@ -9,6 +9,8 @@ import Moviepage from './pages/MoviesPage/Moviepage';
 import Pricing from "./pages/pricing";
 import Moviesgrid from "./pages/MoviesGrid/Moviesgrid";
 import Playbackvedio from "./pages/playbackvedio/Playbackvedio";
+import Login from './components/Login';
+import Signup from './components/signup';
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
             <Route path="/moviepage" element={<Moviepage />} />
             <Route path="/profile" element={<ProfileEdit />} />
             <Route path="/playback" element={<Playbackvedio />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+
             {/* Add more routes here */}
           </Routes>
         </div>

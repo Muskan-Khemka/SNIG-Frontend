@@ -44,10 +44,7 @@ import '../header/header.css'
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </Link>
-          <button
-            style={{ color: " #34deeb" }}
-            className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0 mr-2 glow-on-hover"
-          >
+          <Link to="/login" style={{ color: ' #34deeb' }} className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0 mr-2 glow-on-hover"> {/* Use Link for subscription button */}
             LOGIN
             <svg
               fill="none"
@@ -60,7 +57,7 @@ import '../header/header.css'
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
-          </button>
+          </Link>
           <button
   style={{ color: '#34eba4', padding: '0 20px' }} 
   className="inline-flex items-center bg-gray-800 border-0 py-1 px-6 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0 mr-2 glow-on-hover"
