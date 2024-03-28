@@ -1,12 +1,22 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import userImage from "./1177568.png";
 import { Link } from 'react-router-dom';
-
+import CountContext from "../context"
 const ProfileDropdown = () => {
   const [open, setOpen] = useState(false);
   const imgRef = useRef();
   const menuRef = useRef();
-
+  const context = useContext(CountContext);
+  const {setCurrentUser} = context;
+  const handleLogout = () => {
+    localStorage.removeItem("firstname");
+    localStorage.removeItem("role");
+    localStorage.removeItem("subscription");
+    localStorage.removeItem("token");
+    localStorage.removeItem("subscribedAt");
+    
+    setCurrentUser(false);
+  };
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -54,7 +64,7 @@ const ProfileDropdown = () => {
       >
         <ul>
           <li className="p-2 text-lg text-white cursor-pointer rounded hover:bg-blue-800">
-            Signed in as @xyzee
+            Signed in as {localStorage.getItem("firstname")}
           </li>
           <hr className="border-gray-700" />
 
@@ -68,12 +78,11 @@ const ProfileDropdown = () => {
             help
           </li>
           <hr className="border-gray-700" />
-
           <li className="font-medium flex items-center justify-between">
             <a
               href="#"
               className="flex items-center w-full transform transition-colors duration-200 border border-transparent hover:border-red-600 px-4 py-2"
-              // Adjusted width and padding
+              onClick={handleLogout}
             >
               <div className="mr-3 text-red-600">
                 <svg

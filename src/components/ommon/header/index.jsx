@@ -1,14 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProfileDropdown from "../../dropdown";
 import { Link } from "react-router-dom"; 
 import '../header/header.css'
-
-
-            const Header = () => {
-  const [open, setOpen] = useState(false);
-  
+import CountContext from "../../../context"
+const Header = () => {
+  // const [open, setOpen] = useState(false);
+  const [showAdminBoard, setShowAdminBoard] = useState(false);
+  const [currentUser, setCurrentUser] = useState(false);
+  const [subscribed, setSubscribed] = useState(true);
+  useEffect(() => {
+    if(localStorage.getItem("firstname")) 
+    {
+      setCurrentUser(true);
+    }
+    if(localStorage.getItem("role")==="admin")
+    {
+      setShowAdminBoard(true);
+    }
+    if((localStorage.getItem("subscription"))=="null")
+    {
+      setSubscribed(false);
+    }
+  }, [localStorage.getItem("firstname"),localStorage.getItem("role"),localStorage.getItem("subscription")]);
+  useEffect(() => {
+    console.log(subscribed)
+    console.log(localStorage.getItem("subscription"))
+    const value = localStorage.getItem('subscription');
+    console.log(typeof(value))
+    console.log(localStorage.getItem("subscription")==="null")
+  }, [subscribed]);
   return (
     <div>
+      <CountContext.Provider value={{
+        setCurrentUser:setCurrentUser,
+        setSubscribed:setSubscribed
+      }}>
       <header className="header-fixed text-gray-400 bg-gray-900 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link to="/" className="flex title-font font-medium items-center mb-4 md:mb-0"> {/* Use Link component for routing */}
@@ -30,6 +56,7 @@ import '../header/header.css'
             <a className="mr-5 hover:text-white">New & popular</a>
             <a className="mr-5 hover:text-white">More</a>
           </nav>
+          {!subscribed &&
           <Link to="/pricing" style={{ color: ' #34deeb' }} className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0 mr-2 glow-on-hover"> {/* Use Link for subscription button */}
             SUBSCRIBE
             <svg
@@ -44,6 +71,9 @@ import '../header/header.css'
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </Link>
+          }
+          {!currentUser?
+          (<div>
           <Link to="/login" style={{ color: ' #34deeb' }} className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0 mr-2 glow-on-hover"> {/* Use Link for subscription button */}
             LOGIN
             <svg
@@ -58,14 +88,17 @@ import '../header/header.css'
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </Link>
-          <button
-  style={{ color: '#34eba4', padding: '0 20px' }} 
-  className="inline-flex items-center bg-gray-800 border-0 py-1 px-6 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0 mr-2 glow-on-hover"
->
-  <ProfileDropdown />
-</button>
+          </div>)
+          :
+          (<button
+            style={{ color: '#34eba4', padding: '0 20px' }} 
+            className="inline-flex items-center bg-gray-800 border-0 py-1 px-6 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0 mr-2 glow-on-hover">
+            <ProfileDropdown/>
+          </button>)
+          }
         </div>
       </header>
+      </CountContext.Provider>
     </div>
   );
 };

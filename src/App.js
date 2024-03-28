@@ -11,7 +11,7 @@ import Moviesgrid from "./pages/MoviesGrid/Moviesgrid";
 import Playbackvedio from "./pages/playbackvedio/Playbackvedio";
 import Login from './components/Login';
 import Signup from './components/signup';
-
+import Payment1 from './components/payment/Payment'
 function App() {
   return (
     <Router>
@@ -27,7 +27,7 @@ function App() {
             <Route path="/playback" element={<Playbackvedio />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-
+            <Route path="/payment1" element={<Payment1/>}/>
             {/* Add more routes here */}
           </Routes>
         </div>
