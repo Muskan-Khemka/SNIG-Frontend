@@ -12,9 +12,11 @@ import Playbackvedio from "./pages/playbackvedio/Playbackvedio";
 import Login from './components/Login';
 import Signup from './components/signup';
 import Payment1 from './components/payment/Payment'
+import ContextProvider from "./context/context.jsx"
 function App() {
   return (
     <Router>
+      <ContextProvider>
       <div className="relative width-full">
         <Header />
         <div className="mx-auto overflow-hidden">
@@ -33,6 +35,7 @@ function App() {
         </div>
         <Footer />
       </div>
+      </ContextProvider>
     </Router>
   );
 }

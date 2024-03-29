@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ProfileDropdown from "../../dropdown";
 import { Link } from "react-router-dom"; 
 import '../header/header.css'
-import CountContext from "../../../context"
+import Context from "../../../context/context.js"
 const Header = () => {
-  // const [open, setOpen] = useState(false);
-  const [showAdminBoard, setShowAdminBoard] = useState(false);
-  const [currentUser, setCurrentUser] = useState(false);
-  const [subscribed, setSubscribed] = useState(true);
+  const context = useContext(Context);
+  const {subscribed, setSubscribed,currentUser, setCurrentUser,showAdminBoard, setShowAdminBoard} = context;
   useEffect(() => {
     if(localStorage.getItem("firstname")) 
     {
@@ -17,24 +15,13 @@ const Header = () => {
     {
       setShowAdminBoard(true);
     }
-    if((localStorage.getItem("subscription"))=="null")
+    if((localStorage.getItem("subscription"))==="null")
     {
       setSubscribed(false);
     }
-  }, [localStorage.getItem("firstname"),localStorage.getItem("role"),localStorage.getItem("subscription")]);
-  useEffect(() => {
-    console.log(subscribed)
-    console.log(localStorage.getItem("subscription"))
-    const value = localStorage.getItem('subscription');
-    console.log(typeof(value))
-    console.log(localStorage.getItem("subscription")==="null")
-  }, [subscribed]);
+  }, []);
   return (
     <div>
-      <CountContext.Provider value={{
-        setCurrentUser:setCurrentUser,
-        setSubscribed:setSubscribed
-      }}>
       <header className="header-fixed text-gray-400 bg-gray-900 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link to="/" className="flex title-font font-medium items-center mb-4 md:mb-0"> {/* Use Link component for routing */}
@@ -98,7 +85,6 @@ const Header = () => {
           }
         </div>
       </header>
-      </CountContext.Provider>
     </div>
   );
 };

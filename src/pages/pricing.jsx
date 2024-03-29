@@ -1,7 +1,5 @@
 import React from "react";
-import App from "../components/payment/Payment"
-import { Component } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Pricing = () => {
   return (
     <div>
@@ -176,7 +174,7 @@ const Pricing = () => {
                   </span>
                   Two devices at a time
                 </p>
-                <button class="justify-center flex items-center mt-auto text-white bg-cyan-600 border-0 py-2 px-4 w-full focus:outline-none hover:bg-cyan-400 rounded-full">
+                <button class="justify-center flex items-center mt-auto text-white bg-cyan-600 border-0 py-2 px-4 w-full focus:outline-none hover:bg-cyan-400 rounded-full" onClick={() => localStorage.setItem("amount1", 699)}>
                   Buy Now
                 </button>
                 <p class="text-center text-lg text-white mt-3">
@@ -259,7 +257,7 @@ const Pricing = () => {
                   </span>
                   Four devices at a time
                 </p>
-                <button class="justify-center flex items-center mt-auto text-white bg-pink-600 border-0 py-2 px-4 w-full focus:outline-none hover:bg-pink-400 rounded-full">
+                <button class="justify-center flex items-center mt-auto text-white bg-pink-600 border-0 py-2 px-4 w-full focus:outline-none hover:bg-pink-400 rounded-full" onClick={() => localStorage.setItem("amount1", 999)}>
                   Buy Now
                 </button>
                 <p class="text-center text-lg text-white mt-3">

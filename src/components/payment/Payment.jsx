@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import PayPalCheckoutButton from "./PayPalButton"; 
-import CountContext from "../../context"
+import Context from "../../context/context.js"
 const amount1 = localStorage.getItem("amount1");
 const token = localStorage.getItem("token");
 const subscriptionPlans = {
@@ -12,8 +12,10 @@ const subscriptionPlans = {
 const App = () => {
   // const [selectedAmount, setSelectedAmount] = useState("");
   const [orderId, setOrderId] = useState("");
-  const context = useContext(CountContext);
-  const {setSubscribed} = context;
+  const context = useContext(Context);
+  const {setSubscribed,subscribed} = context;
+  console.log("subscribed")
+  console.log(subscribed)
   const handlePayPalSuccess = async (data) => {
     try {
       // Make a POST request to your backend with the selected amount
@@ -22,19 +24,26 @@ const App = () => {
       },{headers:{
         Authorization:token
       }});
-      const { orderId } = response.data;
+      const {orderId} = response.data;
+      console.log(orderId);
       setOrderId(orderId);
-      setSubscribed(true);
-      // axios request to backend
-      const sub = await axios.get("http://localhost:4000/user/subscription", {
-        headers: {
-          Authorization: token
-        }
-      });
-      console.log(sub.data.subscription);
-      console.log(sub.data.subscribedAt);
-      localStorage.setItem("subscription",sub.data.subscription);
-      localStorage.setItem("subscribedAt",sub.data.subscribedAt);
+      try {
+        const {data: sub} = await axios.get("http://localhost:4000/user/subscription", {
+          headers: {
+            Authorization: token
+          }
+        });
+        localStorage.setItem("subscription",sub.subscription);
+        localStorage.setItem("subscribedAt",sub.subscribedAt);
+      } catch (error) {
+        console.error("Error fetching subscription:", error);
+      }
+      try {
+        setSubscribed(true);
+      } catch(error)
+      {
+        console.error("Error setSubscribed:", error);
+      }
     } catch (error) {
       console.error("Error processing PayPal checkout:", error);
     }

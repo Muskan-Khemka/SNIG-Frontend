@@ -1,21 +1,24 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import userImage from "./1177568.png";
-import { Link } from 'react-router-dom';
-import CountContext from "../context"
+import { Link ,useNavigate} from 'react-router-dom';
+import Context from "../context/context.js"
 const ProfileDropdown = () => {
   const [open, setOpen] = useState(false);
   const imgRef = useRef();
   const menuRef = useRef();
-  const context = useContext(CountContext);
-  const {setCurrentUser} = context;
+  const context = useContext(Context);
+  const navigate = useNavigate();
+  const {setCurrentUser,setSubscribed,setShowAdminBoard} = context;
   const handleLogout = () => {
     localStorage.removeItem("firstname");
     localStorage.removeItem("role");
     localStorage.removeItem("subscription");
     localStorage.removeItem("token");
     localStorage.removeItem("subscribedAt");
-    
+    setSubscribed(false);
     setCurrentUser(false);
+    setShowAdminBoard(false);
+    navigate("/");
   };
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -59,7 +62,7 @@ const ProfileDropdown = () => {
         className="absolute bg-gray-900 p-4 w-104 shadow-lg -left-14 top-full"
         style={{
           display: open ? "block" : "none",
-          width: open ? "10rem" : "0", // Adjusted width
+          width: open ? "10rem" : "0", 
         }}
       >
         <ul>
