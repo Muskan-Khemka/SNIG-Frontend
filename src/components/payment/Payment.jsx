@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import PayPalCheckoutButton from "./PayPalButton";
-import CountContext from "../../context";
+import Context from "../../context";
 import "./Payment.css";
 
 const amount1 = localStorage.getItem("amount1");
@@ -14,7 +14,7 @@ const subscriptionPlans = {
 const App = () => {
   // const [selectedAmount, setSelectedAmount] = useState("");
   const [orderId, setOrderId] = useState("");
-  const context = useContext(CountContext);
+  const context = useContext(Context);
   const { setSubscribed } = context;
   const handlePayPalSuccess = async (data) => {
     try {
