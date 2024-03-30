@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import axios from 'axios';
+import Context from "../../context/context.js"
 import { useParams } from 'react-router-dom';
 const bearerToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvdXJlbWFpbDE1MjNAZ21haWwuY29tIiwiaWF0IjoxNzExNzkwNDc2LCJleHAiOjE3MTE4NzY4NzZ9.eaMdBS7mBV_qtcNqSlRkcKzIDw6X5jwBXnlHZ9DALjU';
 const Moviepage = () => {
   const [movieData, setMovieData] = useState(null);
   const { movieId } = useParams(); // Extract movieId from URL params
-  
+  const context = useContext(Context);
+  const {setSubscribed,subscribed} = context;
+  console.log(subscribed);
+
+  const handleButtonClick = async () => {
+    if (subscribed === true) {
+      window.location.href = '../playback';
+    } else {
+      window.location.href = '../playback';
+    }
+  };
   useEffect(() => {
     const fetchMovieData = async () => {
       try {
