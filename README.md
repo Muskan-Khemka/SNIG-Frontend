@@ -13,7 +13,7 @@ The main web page serves as the entry point to our website, offering various fea
  - **SignUp/Login**: Easily create an account or log in to access personalized features and settings.
 - **Home page**: The page includes a header and footer for easy navigation between different sections and has a beautiful dashboard which contains a search bar.
 - **Movie Section**: Explore our diverse library of films.
-- **My Profile**: Displaying all the necessary information of users.
+- **My Profile**: Displaying all the necessary information of users and users can edit their respective profile.
 - **Search bar**: Suggesting relevant movies as you type, guiding you towards your next entertainment obsession, word by word..
 - **Movie Grid**: Users can easily check the description and play them. It makes finding and watching movies simple.
 - **Trailer Page**: Allow users to navigate to the playback page and provide a brief description of it.
@@ -21,7 +21,6 @@ The main web page serves as the entry point to our website, offering various fea
 - **Admin Page**: Admin can add Movies and users.
 - **Payment Page**: Displays various modes of payment.
 - **Subscribe**: Gain exclusive access to unlimited premium entertainment content with a single click.
-- **Edit Profile**: Admin and user can edit their respective profile.
 
 
 
@@ -32,11 +31,11 @@ The main web page serves as the entry point to our website, offering various fea
 - **Data Modeling**: Utilizes Mongoose schemas to model website data efficiently.
 - **UI Components**: Built with React, offering intuitive and responsive UI components.
 - **Search Bar**: Offers accurate suggestions for movies as you type, guiding you towards your next entertainment choice, search bar facilitates faster movie discovery through autocomplete, enhancing user experience by understanding and suggesting relevant titles using fuzzy and semantic search algorithms  .
-- **Subscription Options**: Provides different resolution and playback speed options based on subscription tiers.
-- **Admin Functionality**: Admins can add and manage movies, ensuring the platform's content remains up-to-date.
-- **Edit Profile**: User can edit their profile.
 - **Trailer page**: Contains a comment section.
 - **Playback Page**: They can adjust playback speed slower or faster.
+- **Admin Functionality**: Admins can add and manage movies, ensuring the platform's content remains up-to-date.
+- **Subscription Options**: Provides different resolution and playback speed options based on subscription tiers.
+- **Edit Profile**: User can edit their profile.
 
 
 

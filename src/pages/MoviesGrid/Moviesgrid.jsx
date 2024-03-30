@@ -64,12 +64,28 @@ const Moviesgrid = () => {
                   <h2 className="text-gray-900 title-font text-lg font-medium">{movie.title}</h2>
                   <p className="mt-1">{movie.year}</p>
                 </div>
+            {displayedMovies.map(movie => (
+              <div key={movie._id} className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <Link to={`/moviepage/${movie._id}`} className="block relative h-48 rounded overflow-hidden">
+                  {movie.poster && <img alt={movie.title} className="object-cover object-center w-full h-full block" src={movie.poster} />}
+                </Link>
+                <div className="mt-4">
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{movie.genres.join(', ')}</h3>
+                  <h2 className="text-gray-900 title-font text-lg font-medium">{movie.title}</h2>
+                  <p className="mt-1">{movie.year}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
+  );
+};
   );
 };
 

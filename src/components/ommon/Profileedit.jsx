@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const ProfileEdit = () => {
   const [username, setUsername] = useState('');
@@ -77,7 +78,10 @@ const ProfileEdit = () => {
         <div className="bg-ivory-200 rounded-lg border-dashed border border-gray-400 text-center py-2 sm:py-4 px-4 sm:px-6 mb-4 sm:mb-6">
           <h2 className="text-sm sm:text-base font-semibold text-white">Upgrade Your Subscription</h2>
           <p className="text-xs sm:text-sm mt-1 sm:mt-2 text-white">Unlock exclusive features and benefits!</p>
-          <button className="bg-sky-400 text-white-900 px-3 py-1 sm:px-4 sm:py-2 rounded mt-2 sm:mt-4 transition duration-300 hover:bg-sky-500 text-xs sm:text-sm w-80" onClick={handleChangeSubscription}>
+          {/* <Link to="/pricing" className="bg-sky-400 text-white-900 px-3 py-1 sm:px-4 sm:py-2 rounded mt-2 sm:mt-4 transition duration-300 hover:bg-sky-500 text-xs sm:text-sm w-80">
+            Upgrade Now
+          </Link> */}
+          <button className="bg-sky-400 text-white-900 px-3 py-1 sm:px-4 sm:py-2 rounded mt-2 sm:mt-4 transition duration-300 hover:bg-sky-500 text-xs sm:text-sm w-80" onClick= {() => {handleChangeSubscription(); window.location.href = '/pricing'; }}>
             Upgrade Now
           </button>
         </div>
