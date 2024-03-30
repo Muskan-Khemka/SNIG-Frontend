@@ -5,7 +5,7 @@ const bearerToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inl
 const Moviepage = () => {
   const [movieData, setMovieData] = useState(null);
   const { movieId } = useParams(); // Extract movieId from URL params
-
+  
   useEffect(() => {
     const fetchMovieData = async () => {
       try {
