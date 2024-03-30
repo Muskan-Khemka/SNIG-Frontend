@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/" element={<HomePage />} /> {/* Use 'element' prop instead of 'component' */}
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/moviesgrid" element={<Moviesgrid />} />
-            <Route path="/moviepage" element={<Moviepage />} />
+            <Route path="/moviepage/:movieId" element={<Moviepage />} />
             <Route path="/profile" element={<ProfileEdit />} />
             <Route path="/playback" element={<Playbackvedio />} />
             <Route path="/login" element={<Login />} />
