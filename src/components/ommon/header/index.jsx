@@ -14,8 +14,8 @@ const Header = () => {
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <Link to="/Moviesgrid" className="mr-5 hover:text-white">Movies</Link>
-            <a className="mr-5 hover:text-white">TV Shows</a>
-            <a className="mr-5 hover:text-white">New & popular</a>
+{/*             <a className="mr-5 hover:text-white">TV Shows</a>
+            <a className="mr-5 hover:text-white">New & popular</a> */}
           </nav>
           <Link to="/" style={{ color: ' #34deeb' }} className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 rounded text-base mt-4 md:mt-0 mr-2 glow-on-hover">
             DASHBOARD
