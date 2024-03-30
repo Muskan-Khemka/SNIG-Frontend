@@ -1,103 +1,138 @@
 * {
-    box-sizing: border-box;
-    color: #ddd;
+  box-sizing: border-box;
+  color: #ddd;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .video-description {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .video {
-    width: 70%;
+  width: 70%;
 }
 
 .video-player {
-    width: 100%;
+  width: 100%;
 }
 
 .description {
-    width: 30%;
-    margin-left: 20px;
-    margin-top: 25px;
+  width: 30%;
+  margin-left: 20px;
+  margin-top: 25px;
 }
 
 .image-container img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .movie-name {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ddd;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ddd;
 }
 
 .text-container p {
-    color: #ddd;
+  color: #ddd;
+}
+
+.button-container {
+  margin-top: 0 px; /* Adjust the value as needed */
 }
 
 .button-container button {
-    padding: 7px 8px;
-    background-color: #ddd;
-    color: #000;
-    border: none;
-    cursor: pointer;
-    border-radius: 30px;
+  margin-top: 10px;
+  padding: 7px 8px;
+  background-color: #ddd;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
 }
 
 .button-container button:hover {
-    background-color: #cbcbcb;
+  background-color: #cbcbcb;
 }
 
-.vid-descrip{
-    padding-left: 55px;
-    margin: 15px 0;
+.vid-descrip {
+  padding-left: 55px;
+  margin: 15px 0;
 }
-.vid-descrip h4{
-    font-size: 18px;
-    color: #ddd;
-    margin-top: 15px;
+.vid-descrip h4 {
+  font-size: 18px;
+  color: #ddd;
+  margin-top: 15px;
 }
-.comment{
-    display: flex;
-    align-items: flex-start;
-    margin: 20px 0;
+.comment {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0;
 }
-.comment img{
-    width: 35px;
-    border-radius: 50%;
-    margin-right: 15px;
+.comment img {
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 15px;
 }
-.comment h3{
-    font-size: 14px;
-    margin-bottom: 2px;
+.comment h3 {
+  font-size: 14px;
+  margin-bottom: 2px;
 }
-.comment h3 span{
-    font-size: 12px;
-    color: #5a5a5a;
-    font-weight: 500;
-    margin-left: 8px;
+.comment h3 span {
+  font-size: 12px;
+  color: #6b8919;
+  font-weight: 500;
+  margin-left: 8px;
 }
-.comment-action{
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-    font-size: 14px;
+.comment-action {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 14px;
 }
-.comment-action img{
-    border-radius: 0;
-    width: 20px;
-    margin-right: 5px;
+.comment-action img {
+  border-radius: 0;
+  width: 20px;
+  margin-right: 5px;
 }
-.comment-action span{
-    margin-right: 20px;
-    color: #5a5a5a;
+.comment-action span {
+  margin-right: 20px;
+  color: #6b8919;
+}
+
+.new-comment {
+  border-radius: 50%;
+  color: black;
+  align-items: center;
+  display: block;
+}
+
+.comment-box {
+  color: #ffffff;
+}
+.comment-box-2 {
+  background-color: #181d5a;
+  width: 40%;
+  height: 50px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.add-button {
+  color: white;
+  border-color: #ffffff;
+  border-width: 1px;
+  margin-top: 20px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.paragraph {
+  text-align: justify;
 }

@@ -61,19 +61,18 @@ const ProfileDropdown = () => {
           <li className="p-2 text-lg text-white cursor-pointer rounded hover:bg-blue-800">
             <Link to="/profile" onClick={handleMenuClick}>Edit Profile</Link>
           </li>
-          <li className="p-2 text-lg text-white cursor-pointer rounded hover:bg-blue-800">
+          {/* <li className="p-2 text-lg text-white cursor-pointer rounded hover:bg-blue-800">
             *Settings
           </li>
           <li className="p-2 text-lg text-white cursor-pointer rounded hover:bg-blue-800 mb-2.5">
             help
-          </li>
+          </li> */}
           <hr className="border-gray-700" />
 
           <li className="font-medium flex items-center justify-between">
             <a
               href="#"
-              className="flex items-center w-full transform transition-colors duration-200 border border-transparent hover:border-red-600 px-4 py-2"
-              // Adjusted width and padding
+              className="flex items-center w-full transform transition-colors duration-200 rounded hover:bg-blue-800 px-4 py-2"
             >
               <div className="mr-3 text-red-600">
                 <svg
