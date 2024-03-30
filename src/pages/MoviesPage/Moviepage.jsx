@@ -64,6 +64,12 @@ const Moviepage = () => {
                   <span className="ml-auto text-gray-900">{movieData.cast.join(', ')}</span>
                 </div>
                 {/* Additional movie details */}
+                <button 
+      className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded"
+      onClick={handleButtonClick}
+    >
+     {subscribed === true ? "Watch Movie" : "Watch Trailer"}
+    </button>
               </div>
               <img alt="Movie Poster" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={movieData.poster} />
             </div>
