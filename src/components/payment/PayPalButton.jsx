@@ -9,14 +9,16 @@ const PayPalCheckoutButton = ({ amount, onSuccess }) => {
   };
 
   return (
-    <PayPalButton
-      amount={amount}
-      onSuccess={handleSuccess}
-      options={{
-        clientId:
-          "AUoQ_vz_gwA2-cqyyQD2CHvGILhFIzFKMzRReOyi4C9h5J58ZhqcsgsaqFKvuLwlGGHgqCIQ7kqj2ScO",
-      }}
-    />
+    <div className="paypal-button-container">
+      <PayPalButton
+        amount={amount}
+        onSuccess={handleSuccess}
+        options={{
+          clientId:
+            "AUoQ_vz_gwA2-cqyyQD2CHvGILhFIzFKMzRReOyi4C9h5J58ZhqcsgsaqFKvuLwlGGHgqCIQ7kqj2ScO",
+        }}
+      />
+    </div>
   );
 };
 
