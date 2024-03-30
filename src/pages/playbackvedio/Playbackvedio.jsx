@@ -1,8 +1,16 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import './Playbackvedio.css'
-
+import axios from 'axios'
 const Playbackvedio = () => {
+    const [videoUrl, setVideoUrl] = React.useState('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4');
+    const [error, setError] = React.useState('');
+    const {data:res} =axios.get('http://localhost:4000/user/video',{
+        headers:{
+            Authorization:localStorage.getItem('token')
+        }
+    })
+    setVideoUrl(res.data);
     return (
         <section style={{background: "#0B0D29"}}>
         <div className="container">
@@ -10,7 +18,7 @@ const Playbackvedio = () => {
                 <div className="video">
                     <ReactPlayer
                         controls={true}
-                        url={'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'}
+                        url={videoUrl}
                         height="500px"
                         width="100%"
                     />
