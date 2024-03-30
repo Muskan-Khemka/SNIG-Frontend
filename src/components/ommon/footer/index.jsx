@@ -1,17 +1,19 @@
-import React from 'react'
+import React from 'react';
+import logo from "../../../Images/onlylogo.png";
+import { Link } from "react-router-dom"; 
 
 const Footer = () => {
   return (
     <footer class="text-gray-400 bg-gray-900 body-fontw-full">
    <div class="container px-5 py-20 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"> 
     <div class="w-30 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-     <a class="flex title-font font-medium items-center md:justify-start justify-center text-white"> 
+     <Link to="/" class="flex title-font font-medium items-center md:justify-start justify-center text-white"> 
         {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
         </svg> */}
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEcElEQVR4nO2ZT2zbVBzH3y7AhMSJv4IjZxgqXf+stE1YEntjk+pHxV/BkRMHLnCj0/OSai1tSbtStTTlsHRt06RtsjSx0/GvjGlDsLFqHWItSMsEVYo4bN0kvw320HOJ5aZ28uw6akD9Sh8psp+d38f+2e+lBWAn/9NAjJ6DWOyDWLwiKOiWCkaLEKPeFoyeBZWat0nbA4IihgRF/BtikRhB9wmK+CkdW9ZiWm+1PQ6xGICK+GP+KqqfMfIfWvM/tmk86doNFfGMWeEGIvNlk4BYfE0t2PzL117G6NUNxyhomLV4DUUcdLx4AaPXoYLulf5ydC8vQXu+WNsUa6cWJ58J2jb06looYI22k4DRcctXH/97DoyCjgmoPW+9iKMQo5+M9h1e6iHu4TGVQ8vdZgKLjgkICrpkuQj1ITe+a/SY5mBUxR0aM72LwDmBzYWUKoIes0WBG9stcINOWEbF0TtGj6EcXu4xE7hc1hYqVYSgoIt0hrX7EEOMepwTwMhvowCxFR/dY/c1CrH/GccE1FeihdcoVNDNlrW2R1V5BQ3ZEBgATodOTqwTmYDFVwrWQfMWiv+KI8H7HRfISxS9Ewq6qS9eL0GXBwyLuYGyFa9vJzpJCYp4If+qpJ9pz+fbxix0eUBnWPqGWV8Iqsdehlj82NGeN0rV6uiBqtXw9ef/CJNyoZ5/NcyDYiFk18H2zAd1CxN3q1dGSfXK6Bk2gZx6cmKLHDtVuRNZsxq4E6mHvH1S7ED7HNl77aQGk0D176PENr9ZAxikKZLc4xlJLvv6JEIFapfGNZgE9mZPEttcswYoSKM085ZrMn7b89ksyQvULU5oMAnU/DpGtsQv7MCCN1STPEPc0QTRC9RfnNRgEqi9Ok7MeOS9YVvU/jxuCGQQaDgX1WASqLsyQcywK6BvAz2QQeCF+ZgGm8BChBhRvxCxLVB/KWIIZBBoPD2twSRQf2GSmGFXYN8Pk4ZABoHm1IwGk8C+76LEDNsC56OGQAYB10xCg0mg4WyUGBOzLdDwbcwQyCDgjpzSYBLQPzTWmNrI16WBDAL7w0kNJoHGL6aII3yuZ9oQwDCReUIpDSaBpsw0cQS5NIBhKeEdSGswCeif+i0xWxrAsJjjgrIGm0A8fr05ESd6XHaJFyVbtBBCdvH+0+/zHfJdvjND+A75GyYB91SCd8USWddUgtjBrSdmjCuayL4Yi3NgO2L1hzuotMD/vIBi7Z8YoBLjCSVrPCMpohFKXd0/Mru0cVuyBlRqPEOpUe9QmuTxDKbf8Q6l3i3YFgaVGN9g+glvv4R9n0hEpT+da+2K7PZ0yg/6+tN/6rbfOThw6klQafEF00e4XoloBKUPtX29cifXK5M8vqB8BFRSWtsi9/m65RWuWyYUX5d8+6WPvnw4v58Lpp7iu6Q7fLdM1pFyXDBV3r/AWQnXIb/Jd9BZcR3uWOb4pjHH5ImNY6Q3QKWED2TO0/UJhQ/M/eUNSE8XjuECc9X5Meq49rnvt6fanewElMo/PlVWrrcmgG4AAAAASUVORK5CYII="class="w-34 h-24"></img>
-        <span class="ml-3 text-3xl font-black tracking-wide bg-gradient-to-r from-teal-400 to-blue-400 text-transparent bg-clip-text font-sans">THE <br/>MOVIE <br/> DB</span>
-      </a>
+        <img src={logo} alt="logo" class="w-34 h-24"></img>
+        <span class="ml-3 text-3xl font-black tracking-wide bg-gradient-to-r from-teal-400 to-blue-400 text-transparent bg-clip-text font-sans">MOVIE <br/>HEIST <br/></span>
+      </Link>
       <p class="mt-2 text-sm text-gray-500">The best movie suggestions using MongoDB</p>
     </div>
     <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
@@ -19,7 +21,7 @@ const Footer = () => {
         <h2 class="title-font font-medium text-white tracking-widest text-sm mb-3">THE BASICS</h2>
         <nav class="list-none mb-10">
           <li>
-            <a class="text-gray-400 hover:text-white">About TMDB</a>
+            <a class="text-gray-400 hover:text-white">About Movie Heist</a>
           </li>
           <li>
             <a class="text-gray-400 hover:text-white">Contact Us</a>

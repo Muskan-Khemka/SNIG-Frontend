@@ -4,6 +4,7 @@ import TypingEffect from 'react-typing-effect'; // Import the package
 import { Link } from "react-router-dom";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Link as ScrollLink } from 'react-scroll';
 
 const HeroSection = () => {
   const settings = {
@@ -64,9 +65,12 @@ const HeroSection = () => {
           </h2>
           <p className="mb-12 leading-relaxed text-lg" style={{ color: "white" }}>Your go-to place to search movies, anytime anywhere!</p>
           <div className="flex justify-center mt-8">
-            <Link to="/"> {/* Use Link component to navigate to homepage */}
+            {/* <Link to="/">
               <button className="inline-flex text-white bg-blue-800 border-0 py-3 px-10 focus:outline-none hover:bg-blue-900 rounded-full text-lg animate-bounce">Search here</button>
-            </Link>
+            </Link> */}
+            <ScrollLink to="/HomePage" smooth={true} duration={500}>
+              <button className="inline-flex text-white bg-blue-800 border-0 py-3 px-10 focus:outline-none hover:bg-blue-900 rounded-full text-lg animate-bounce">Search here</button>
+            </ScrollLink>
           </div>
         </div>
       </div>
