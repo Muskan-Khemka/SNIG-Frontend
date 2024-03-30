@@ -1,12 +1,25 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import userImage from "./1177568.png";
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from "react-router-dom";
+import Context from "../context/context.js";
 const ProfileDropdown = () => {
   const [open, setOpen] = useState(false);
   const imgRef = useRef();
   const menuRef = useRef();
-
+  const context = useContext(Context);
+  const navigate = useNavigate();
+  const { setCurrentUser, setSubscribed, setShowAdminBoard } = context;
+  const handleLogout = () => {
+    localStorage.removeItem("firstname");
+    localStorage.removeItem("role");
+    localStorage.removeItem("subscription");
+    localStorage.removeItem("token");
+    localStorage.removeItem("subscribedAt");
+    setSubscribed(false);
+    setCurrentUser(false);
+    setShowAdminBoard(false);
+    navigate("/");
+  };
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -49,17 +62,19 @@ const ProfileDropdown = () => {
         className="absolute bg-gray-900 p-4 w-104 shadow-lg -left-14 top-full"
         style={{
           display: open ? "block" : "none",
-          width: open ? "10rem" : "0", // Adjusted width
+          width: open ? "10rem" : "0",
         }}
       >
         <ul>
           <li className="p-2 text-lg text-white cursor-pointer rounded hover:bg-blue-800">
-            Signed in as @xyzee
+            Signed in as {localStorage.getItem("firstname")}
           </li>
           <hr className="border-gray-700" />
 
           <li className="p-2 text-lg text-white cursor-pointer rounded hover:bg-blue-800">
-            <Link to="/profile" onClick={handleMenuClick}>Edit Profile</Link>
+            <Link to="/profile" onClick={handleMenuClick}>
+              Edit Profile
+            </Link>
           </li>
           {/* <li className="p-2 text-lg text-white cursor-pointer rounded hover:bg-blue-800">
             *Settings
@@ -68,11 +83,11 @@ const ProfileDropdown = () => {
             help
           </li> */}
           <hr className="border-gray-700" />
-
           <li className="font-medium flex items-center justify-between">
             <a
               href="#"
-              className="flex items-center w-full transform transition-colors duration-200 rounded hover:bg-blue-800 px-4 py-2"
+              className="flex items-center w-full transform transition-colors duration-200 border border-transparent hover:border-red-600 px-4 py-2"
+              // Adjusted width and padding
             >
               <div className="mr-3 text-red-600">
                 <svg

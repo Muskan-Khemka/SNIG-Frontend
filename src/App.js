@@ -11,10 +11,12 @@ import Moviesgrid from "./pages/MoviesGrid/Moviesgrid";
 import Playbackvedio from "./pages/playbackvedio/Playbackvedio";
 import Login from './components/Login';
 import Signup from './components/signup';
-
+import Payment1 from './components/payment/Payment'
+import ContextProvider from "./context/context.jsx"
 function App() {
   return (
     <Router>
+      <ContextProvider>
       <div className="relative width-full">
         <Header />
         <div className="mx-auto overflow-hidden">
@@ -27,12 +29,13 @@ function App() {
             <Route path="/playback" element={<Playbackvedio />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-
+            <Route path="/payment1" element={<Payment1/>}/>
             {/* Add more routes here */}
           </Routes>
         </div>
         <Footer />
       </div>
+      </ContextProvider>
     </Router>
   );
 }

@@ -2,7 +2,26 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
-
+// const getRemainingTime = (token) => {
+// const decodedToken = decodeToken(token);
+// if (!decodedToken || !decodedToken.exp) {
+// 	return null;
+// }
+// const currentTime = Date.now() / 1000; // Convert milliseconds to seconds
+// return decodedToken.exp - currentTime;
+// };
+// const autoLogout = () => {
+// const token = localStorage.getItem('token');
+// if (!token) {
+// 	return;
+// }
+// const remainingTime = getRemainingTime(token);
+// if (remainingTime <= 0) {
+// 	localStorage.removeItem('token');
+// } else {
+// 	const timer=setTimeout(autoLogout, remainingTime * 1000); 
+// }
+// };
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
@@ -14,10 +33,15 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/auth";
+			const url = "http://localhost:4000/user/signin";
 			const { data: res } = await axios.post(url, data);
-			localStorage.setItem("token", res.data);
+			localStorage.setItem("firstname",res.firstname)
+			localStorage.setItem("token",`Bearer ${res.token}`)
+			localStorage.setItem("role",res.role)
+			localStorage.setItem("subscribedAt",res.subscribedAt)
+			localStorage.setItem("subscription",res.subscription)
 			window.location = "/";
+			// autologout();
 		} catch (error) {
 			if (
 				error.response &&
