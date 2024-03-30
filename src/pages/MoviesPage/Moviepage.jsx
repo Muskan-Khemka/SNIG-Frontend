@@ -1,22 +1,14 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Context from "../../context/context.js"
+
 import { useParams } from 'react-router-dom';
 const bearerToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlvdXJlbWFpbDE1MjNAZ21haWwuY29tIiwiaWF0IjoxNzExNzkwNDc2LCJleHAiOjE3MTE4NzY4NzZ9.eaMdBS7mBV_qtcNqSlRkcKzIDw6X5jwBXnlHZ9DALjU';
 const Moviepage = () => {
   const [movieData, setMovieData] = useState(null);
   const { movieId } = useParams(); // Extract movieId from URL params
-  const context = useContext(Context);
-  const {setSubscribed,subscribed} = context;
-  console.log(subscribed);
+ 
 
-  const handleButtonClick = async () => {
-    if (subscribed === true) {
-      window.location.href = '../playback';
-    } else {
-      window.location.href = '../playback';
-    }
-  };
+
   useEffect(() => {
     const fetchMovieData = async () => {
       try {
@@ -64,12 +56,6 @@ const Moviepage = () => {
                   <span className="ml-auto text-gray-900">{movieData.cast.join(', ')}</span>
                 </div>
                 {/* Additional movie details */}
-                <button 
-      className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded"
-      onClick={handleButtonClick}
-    >
-     {subscribed === true ? "Watch Movie" : "Watch Trailer"}
-    </button>
               </div>
               <img alt="Movie Poster" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={movieData.poster} />
             </div>
