@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Moviepage = () => {
+  
   return (
     <div>
       <section class="text-gray-600 body-font overflow-hidden">
